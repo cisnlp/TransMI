@@ -1,12 +1,12 @@
 # TransMI
 
-This is the repository for the ***TransMI*** framework, which aims to directly build strong baselines from **existing mPLMs** for transliterated data. In this work, we only consider the mPLMs that use SentencePiece Unigram tokenizers. Specifically, we consider three models: [XLM-R](https://huggingface.co/FacebookAI/xlm-roberta-base), [Glot500](https://huggingface.co/cis-lmu/glot500-base), and [Furina](https://huggingface.co/yihongLiu/furina). We applied three different merge modes (Min-Merge, Average-Merge, and Max-Merge) to each model type and evaluated the resulting models on both non-transliterated evaluation datasets (the original ones) and transliterated evaluation datasets (we use [Uroman](https://github.com/isi-nlp/uroman) to transliterate the original texts into a common script: Latin).
+This is the repository for the ***TransMI*** framework, which aims to directly build strong baselines from **existing mPLMs** for transliterated data. In this work, we only consider the mPLMs that use SentencePiece Unigram tokenizers. Specifically, we consider three models: [XLM-R](https://huggingface.co/FacebookAI/xlm-roberta-base), [Glot500](https://huggingface.co/cis-lmu/glot500-base), and [Furina](https://huggingface.co/yihongLiu/furina). We applied three different merge modes (**Min-Merge**, **Average-Merge**, and **Max-Merge**) to each model type and evaluated the resulting models on both non-transliterated evaluation datasets (the original ones) and transliterated evaluation datasets (we use [Uroman](https://github.com/isi-nlp/uroman) to transliterate the original texts into a common script: Latin).
 
 Paper on arXiv:
 
 ## Apply TransMI to an mPLM
 
-Simply run the following code to create the corresponding tokenizer and the **TransMI**-modified model in Max-Merge mode. The tokenizer and the model will be stored at ``.models/xlm-roberta-base-with-transliteration-max``
+Simply run the following code to create the corresponding tokenizer and the **TransMI**-modified model in Max-Merge mode. The tokenizer and the model will be stored at ``./models/xlm-roberta-base-with-transliteration-max``
 
 ```
 python transmi.py \\
@@ -23,7 +23,7 @@ Load the model by simply specifying the saved path using ``from_pretrained`` met
 ```python
 from transformers import XLMRobertaForMaskedLM, XLMRobertaTokenizer
 
-MODEL_PATH = '.models/xlm-roberta-base-with-transliteration-max'
+MODEL_PATH = './models/xlm-roberta-base-with-transliteration-max'
 
 model = XLMRobertaForMaskedLM.from_pretrained(MODEL_PATH)
 tokenizer = XLMRobertaTokenizer.from_pretrained(MODEL_PATH)
