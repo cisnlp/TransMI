@@ -1,5 +1,8 @@
 # TransMI
 
+<img align="left" src="/images/framework.png" width="300" height="300" /> 
+</p>
+
 This is the repository for the ***TransMI*** framework, which aims to directly build strong baselines from **existing mPLMs** for transliterated data. In this work, we only consider the mPLMs that use SentencePiece Unigram tokenizers. Specifically, we consider three models: [XLM-R](https://huggingface.co/FacebookAI/xlm-roberta-base), [Glot500](https://huggingface.co/cis-lmu/glot500-base), and [Furina](https://huggingface.co/yihongLiu/furina). We applied three different merge modes (**Min-Merge**, **Average-Merge**, and **Max-Merge**) to each model type and evaluated the resulting models on both non-transliterated evaluation datasets (the original ones) and transliterated evaluation datasets (we use [Uroman](https://github.com/isi-nlp/uroman) to transliterate the original texts into a common script: Latin).
 
 Paper on arXiv:
