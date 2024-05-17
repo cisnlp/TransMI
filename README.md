@@ -7,7 +7,16 @@ This is the repository for the ***TransMI*** framework, which aims to directly b
 </div>
 
   
-Paper on arXiv:
+Paper on arXiv: [TransMI](https://arxiv.org/abs/2405.09913)
+  
+  
+Models available on HuggingFace:  
+  
+[xlm-r-with-transliteration-average](https://huggingface.co/yihongLiu/xlm-r-with-transliteration-average), [xlm-r-with-transliteration-min](https://huggingface.co/yihongLiu/xlm-r-with-transliteration-min), [xlm-r-with-transliteration-max](https://huggingface.co/yihongLiu/xlm-r-with-transliteration-max)  
+[glot500-with-transliteration-average](https://huggingface.co/yihongLiu/glot500-with-transliteration-average), [glot500-with-transliteration-min](https://huggingface.co/yihongLiu/glot500-with-transliteration-min), [glot500-with-transliteration-max](https://huggingface.co/yihongLiu/glot500-with-transliteration-max)  
+[furina-with-transliteration-average](https://huggingface.co/yihongLiu/furina-with-transliteration-average), [furina-with-transliteration-min](https://huggingface.co/yihongLiu/furina-with-transliteration-min), [furina-with-transliteration-max](https://huggingface.co/yihongLiu/furina-with-transliteration-max)  
+
+
 
 ## Apply TransMI to an mPLM
 
@@ -43,13 +52,13 @@ Please refer to [Glot500](https://github.com/cisnlp/Glot500) and [SIB200](https:
 
 ## Citation
 
-If you find our code, models, or data useful for your research, please considering citing:
+If you find our code or models useful for your research, please considering citing:
 
 ```
-@article{liu2024translico,
-  title={TransliCo: A Contrastive Learning Framework to Address the Script Barrier in Multilingual Pretrained Language Models},
+@article{liu2024transmi,
+  title={TransMI: A Framework to Create Strong Baselines from Multilingual Pretrained Language Models for Transliterated Data},
   author={Yihong Liu and Chunlan Ma and Haotian Ye and Hinrich Sch{\"u}tze},
-  journal={arXiv preprint arXiv:2401.06620},
+  journal={arXiv preprint arXiv:2405.09913},
   year={2024}
 }
 ```
