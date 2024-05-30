@@ -7,6 +7,7 @@ import sentencepiece_model_pb2 as sp_model
 import glob
 import numpy as np
 import json
+import torch
 
 
 def get_new_vocab_score(tokenizer_data, origin_to_trans, trans_to_origin, merge_mode):
@@ -157,12 +158,12 @@ if __name__ == '__main__':
         if len(source_tokens) == 1:
             new_embeddings[idx] = embeddings[token_to_id_dict_old[source_tokens[0]]]
         else:
-            if mode == 'max':
+            if args.merge_mode == 'max':
                 # the order is already from the highest to the lowest, so we simply get the first one
                 new_embeddings[idx] = embeddings[token_to_id_dict_old[source_tokens[0]]]
-            elif mode == 'min':
+            elif args.merge_mode == 'min':
                 new_embeddings[idx] = embeddings[token_to_id_dict_old[source_tokens[-1]]]
-            elif mode == "average":
+            elif args.merge_mode == "average":
                 emb = np.zeros(embeddings.shape[1])
                 for old_indx in [token_to_id_dict_old[source] for source in source_tokens]:
                     emb += embeddings[old_indx]
